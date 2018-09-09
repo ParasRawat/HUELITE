@@ -15,6 +15,15 @@
         android:padding="10dp"
         android:text="Device Name"/>
 
+    <Switch
+        android:id="@+id/switch1"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textColor="#A9A9A9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status  " />
+
     <SeekBar
         android:id="@+id/seekbar"
         android:layout_marginLeft="10dp"

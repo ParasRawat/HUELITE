@@ -25,9 +25,8 @@ public class CreateDeviceActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //To Be Saving data here
-                Log.d(TAG, "onClick: We will Save data here-----"+dropdown.getSelectedItem().toString());
-                Log.d(TAG, "onClick: We will save device name here"+textInputEditText.getText().toString());
-                //Point
+                Log.d(TAG, "onClick: We will Save data here-----" + dropdown.getSelectedItem().toString());
+                Log.d(TAG, "onClick: We will save device name here" + textInputEditText.getText().toString());//Point
             }
         });
 
