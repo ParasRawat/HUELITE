@@ -1,5 +1,6 @@
 package com.example.parasrawat2124.huelite_new;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -16,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DeviceTab extends Fragment {
     
@@ -23,21 +25,27 @@ public class DeviceTab extends Fragment {
     FloatingActionButton floatingActionButton;
     RecyclerView.Adapter adapter;
     RecyclerView recyclerView;
-     ArrayList<DeviceClass> devices;
+//     ArrayList<DeviceClass> devices;
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.devicefragment,container,false);
         floatingActionButton=view.findViewById(R.id.floatingActionButton);
         recyclerView=view.findViewById(R.id.recyclerview);
-        devices=new ArrayList<>();
-        for(int i=0;i<11;i++) {
-            DeviceClass deviceClass = new DeviceClass("Device"+i, 1, 20);
-            devices.add(deviceClass);
-        }
+//        devices=new ArrayList<>();
+//        for(int i=0;i<11;i++) {
+//            DeviceClass deviceClass = new DeviceClass("Device"+i, 1, 20);
+//            devices.add(deviceClass);
+//        }
+        AppDatabase appDatabase= Room.databaseBuilder(getContext(),AppDatabase.class,"production")
+                .allowMainThreadQueries()
+                .fallbackToDestructiveMigration()
+                .build();
+
+        List<DeviceClass> deviceClassArrayList = appDatabase.userDao().getalldevices();
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new DeviceAdapter(devices);
+        adapter=new DeviceAdapter(deviceClassArrayList,getContext());
         recyclerView.setAdapter(adapter);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
