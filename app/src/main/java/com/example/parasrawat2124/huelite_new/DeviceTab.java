@@ -23,7 +23,7 @@ public class DeviceTab extends Fragment {
     FloatingActionButton floatingActionButton;
     RecyclerView.Adapter adapter;
     RecyclerView recyclerView;
-     ArrayList<String> devices;
+     ArrayList<DeviceClass> devices;
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
@@ -31,10 +31,11 @@ public class DeviceTab extends Fragment {
         floatingActionButton=view.findViewById(R.id.floatingActionButton);
         recyclerView=view.findViewById(R.id.recyclerview);
         devices=new ArrayList<>();
-        devices.add("Device");
-        devices.add("Device 2");
-        devices.add("Device 3");
-        devices.add("Device 4");
+        for(int i=0;i<11;i++) {
+            DeviceClass deviceClass = new DeviceClass("Device"+i, 1, 20);
+            devices.add(deviceClass);
+        }
+
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         adapter=new DeviceAdapter(devices);
         recyclerView.setAdapter(adapter);
