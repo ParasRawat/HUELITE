@@ -21,11 +21,17 @@ public class DeviceTab extends Fragment {
     
     public static final String TAG="DEVICE FRAGMENT";
     FloatingActionButton floatingActionButton;
+    RecyclerView.Adapter adapter;
+    RecyclerView recyclerView;
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.devicefragment,container,false);
         floatingActionButton=view.findViewById(R.id.floatingActionButton);
+        recyclerView=view.findViewById(R.id.recyclerview);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter=new DeviceAdapter();
+        recyclerView.setAdapter(adapter);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
