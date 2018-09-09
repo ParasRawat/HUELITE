@@ -23,14 +23,24 @@ public class DeviceTab extends Fragment {
     FloatingActionButton floatingActionButton;
     RecyclerView.Adapter adapter;
     RecyclerView recyclerView;
+    ArrayList<String> devices;
     @Nullable
     @Override
     public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable final Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.devicefragment,container,false);
         floatingActionButton=view.findViewById(R.id.floatingActionButton);
         recyclerView=view.findViewById(R.id.recyclerview);
+        devices=new ArrayList<>();
+        devices.add("Device");
+        devices.add("Device");
+        devices.add("Device");
+        devices.add("Device");
+        devices.add("Device");
+        devices.add("Device");
+        devices.add("Device");
+        devices.add("Device");
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter=new DeviceAdapter();
+        adapter=new DeviceAdapter(devices);
         recyclerView.setAdapter(adapter);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
