@@ -4,10 +4,31 @@
     android:layout_height="match_parent">
 
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello WoRLD"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="90dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+        <ImageView
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/imageplus"
+            android:layout_margin="10dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/color_recyclerview_design"
+            android:padding="20dp"
+            android:src="@drawable/colorplus" />
+
+    </LinearLayout>
 
 </RelativeLayout>
