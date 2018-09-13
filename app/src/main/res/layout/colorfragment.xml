@@ -56,4 +56,14 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/updialog"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/generalstroke"
+        android:src="@drawable/uparrow" />
+
 </RelativeLayout>

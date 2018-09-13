@@ -3,6 +3,7 @@ package com.example.parasrawat2124.huelite_new;
 import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -49,5 +50,10 @@ public class CreateDeviceActivity extends AppCompatActivity {
             }
         });
 
+
+
     }
+
+
+
 }
